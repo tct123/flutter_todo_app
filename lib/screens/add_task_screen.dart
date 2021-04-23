@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todoey/models/task_data.dart';
 
 class AddTaskScreeen extends StatelessWidget {
-  final Function addNewTask;
   final controller = TextEditingController();
-
-  AddTaskScreeen({this.addNewTask});
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +33,19 @@ class AddTaskScreeen extends StatelessWidget {
               autofocus: true,
               textAlign: TextAlign.center,
               controller: controller,
+              onEditingComplete: () {
+                Provider.of<TaskData>(context, listen: false)
+                    .addTask(controller.text);
+                controller.clear();
+                Navigator.pop(context);
+              },
             ),
             TextButton(
               onPressed: () {
-                addNewTask(controller.text);
+                Provider.of<TaskData>(context, listen: false)
+                    .addTask(controller.text);
                 controller.clear();
+                Navigator.pop(context);
               },
               child: Text(
                 'Add',
