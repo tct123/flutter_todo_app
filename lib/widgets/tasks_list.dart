@@ -6,7 +6,8 @@ class TasksList extends StatelessWidget {
   final List<Task> tasks;
   final Function toggleTask;
 
-  TasksList({this.tasks, this.toggleTask});
+  const TasksList({Key? key, required this.tasks, required this.toggleTask})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

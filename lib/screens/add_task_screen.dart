@@ -4,15 +4,15 @@ class AddTaskScreeen extends StatelessWidget {
   final Function addNewTask;
   final controller = TextEditingController();
 
-  AddTaskScreeen({this.addNewTask});
+  AddTaskScreeen({Key? key, required this.addNewTask}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xFF757575),
+      color: const Color(0xFF757575),
       child: Container(
-        padding: EdgeInsets.all(20.0),
-        decoration: BoxDecoration(
+        padding: const EdgeInsets.all(20.0),
+        decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(30.0),
@@ -22,7 +22,7 @@ class AddTaskScreeen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
+            const Text(
               'Add task',
               textAlign: TextAlign.center,
               style: TextStyle(
@@ -40,13 +40,13 @@ class AddTaskScreeen extends StatelessWidget {
                 addNewTask(controller.text);
                 controller.clear();
               },
-              child: Text(
-                'Add',
-                style: TextStyle(color: Colors.white),
-              ),
               style: ButtonStyle(
                 backgroundColor:
-                    MaterialStateProperty.all(Colors.lightBlueAccent),
+                    WidgetStateProperty.all(Colors.lightBlueAccent),
+              ),
+              child: const Text(
+                'Add',
+                style: TextStyle(color: Colors.white),
               ),
             ),
           ],

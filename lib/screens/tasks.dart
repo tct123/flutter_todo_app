@@ -4,6 +4,8 @@ import 'package:todoey/screens/add_task_screen.dart';
 import 'package:todoey/widgets/tasks_list.dart';
 
 class TaskScreen extends StatefulWidget {
+  const TaskScreen({Key? key}) : super(key: key);
+
   @override
   _TaskScreenState createState() => _TaskScreenState();
 }
@@ -39,7 +41,7 @@ class _TaskScreenState extends State<TaskScreen> {
             builder: (context) => AddTaskScreeen(addNewTask: addTask),
           );
         },
-        child: Icon(
+        child: const Icon(
           Icons.add,
           size: 40,
         ),
@@ -48,13 +50,13 @@ class _TaskScreenState extends State<TaskScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Container(
-            padding: EdgeInsets.only(
+            padding: const EdgeInsets.only(
               top: 60.0,
               left: 30.0,
               right: 30.0,
               bottom: 30.0,
             ),
-            child: Column(
+            child: const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 CircleAvatar(
@@ -88,7 +90,7 @@ class _TaskScreenState extends State<TaskScreen> {
           ),
           Expanded(
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20),
