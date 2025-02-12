@@ -7,10 +7,10 @@ class TaskScreen extends StatefulWidget {
   const TaskScreen({Key? key}) : super(key: key);
 
   @override
-  _TaskScreenState createState() => _TaskScreenState();
+  TaskScreenState createState() => TaskScreenState();
 }
 
-class _TaskScreenState extends State<TaskScreen> {
+class TaskScreenState extends State<TaskScreen> {
   List<Task> tasks = [
     Task(name: 'Eggs'),
     Task(name: 'task2'),
