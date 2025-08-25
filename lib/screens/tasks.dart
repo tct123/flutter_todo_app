@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:todoey/models/task.dart';
-import 'package:todoey/screens/add_task_screen.dart';
-import 'package:todoey/widgets/tasks_list.dart';
+import 'package:flutter_todo_app/models/task.dart';
+import 'package:flutter_todo_app/screens/add_task_screen.dart';
+import 'package:flutter_todo_app/widgets/tasks_list.dart';
 
 class TaskScreen extends StatefulWidget {
-  const TaskScreen({Key? key}) : super(key: key);
+  const TaskScreen({super.key});
 
   @override
   TaskScreenState createState() => TaskScreenState();
@@ -17,13 +17,13 @@ class TaskScreenState extends State<TaskScreen> {
     Task(name: 'task3'),
   ];
 
-  addTask(String name) {
+  void addTask(String name) {
     setState(() {
       tasks.add(Task(name: name));
     });
   }
 
-  markTask(int id) {
+  void markTask(int id) {
     setState(() {
       tasks[id].toggleDone();
     });
@@ -41,10 +41,7 @@ class TaskScreenState extends State<TaskScreen> {
             builder: (context) => AddTaskScreeen(addNewTask: addTask),
           );
         },
-        child: const Icon(
-          Icons.add,
-          size: 40,
-        ),
+        child: const Icon(Icons.add, size: 40),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -68,22 +65,18 @@ class TaskScreenState extends State<TaskScreen> {
                     color: Colors.lightBlueAccent,
                   ),
                 ),
-                SizedBox(
-                  height: 10.0,
-                ),
+                SizedBox(height: 10.0),
                 Text(
                   'Todoey',
                   style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 50.0,
-                      fontWeight: FontWeight.w700),
+                    color: Colors.white,
+                    fontSize: 50.0,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
                 Text(
                   '12 Tasks',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18.0,
-                  ),
+                  style: TextStyle(color: Colors.white, fontSize: 18.0),
                 ),
               ],
             ),
@@ -97,10 +90,7 @@ class TaskScreenState extends State<TaskScreen> {
                   topRight: Radius.circular(20),
                 ),
               ),
-              child: TasksList(
-                tasks: tasks,
-                toggleTask: markTask,
-              ),
+              child: TasksList(tasks: tasks, toggleTask: markTask),
             ),
           ),
         ],

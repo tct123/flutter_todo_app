@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:todoey/models/task.dart';
-import 'package:todoey/widgets/task_tile.dart';
+import 'package:flutter_todo_app/models/task.dart';
+import 'package:flutter_todo_app/widgets/task_tile.dart';
 
 class TasksList extends StatelessWidget {
   final List<Task> tasks;
   final Function toggleTask;
 
-  const TasksList({Key? key, required this.tasks, required this.toggleTask})
-      : super(key: key);
+  const TasksList({super.key, required this.tasks, required this.toggleTask});
 
   @override
   Widget build(BuildContext context) {
